@@ -44,3 +44,9 @@ body {
 .navbar-links li a{
   color: rgb(240, 6, 197);
 }
+.footer {
+  border-top:1px solid black;
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+}
