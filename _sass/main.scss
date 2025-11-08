@@ -1,3 +1,46 @@
 body {
-  background-color: lightblue
+  background-color: lightblue;
+  margin-left: 50px;
+  text-align: center
+}
+.body-container{
+  max-width: 900px;
+  width: 100%;
+  margin: 10px auto 0 auto;
+  padding: 0 16px;
+  border-radius: 10px;
+  box-sizing: border-box;
+  font-family:sans-serif;
+}
+*{
+  text-decoration: none
+}
+.navbar-div{
+  display: flex;
+  padding-right: 15px;
+  padding-left: 15px;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 15px;
+  border-bottom: 2px solid black;
+}
+.navbar-logo{
+  font-size: 40px;
+  font-weight: bold;
+}
+.navbar-logo a{
+  color: black;
+}
+.navbar-links{
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 25px;
+}
+.navbar-links li{
+  margin-right: 20px;
+}
+.navbar-links li a{
+  color: rgb(240, 6, 197);
 }
