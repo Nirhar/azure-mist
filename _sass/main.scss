@@ -2,7 +2,6 @@ body {
   background-color: lightblue;
   margin-left: 25px;
   margin-right: 25px;
-  text-align: center
 }
 .body-container{
   max-width: 900px;
@@ -70,7 +69,35 @@ body {
 .footer-message a{
   color: orangered;
 }
-.footer-message a:hover {
+.footer-message a:hover{
   text-decoration: underline;
+}
+.post-container h3{
+  position: relative; /* Establishes a positioning context for the pseudo-element */
+  padding-bottom: 4px; /* Adds some space for the underline */
+  margin-top: 30px;
+}
+.post-container{
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.post-container h3::after{
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 30%; /* Sets the underline width to X% of post width */
+  height: 1px;
+  background-color: blue;
+}
+.post-container h3 a{
+  color: blue;
+}
+.post-container h3 a:hover{
+  text-decoration: underline;
+}
+.post-container p{
+  padding-left: 20px;
+  padding-right: 20px;
 }
 
