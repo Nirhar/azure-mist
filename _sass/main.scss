@@ -67,6 +67,7 @@ body {
   justify-content: space-between;
   align-items: center;
   padding-top: 0px;
+  margin-top: 50px;
 }
 .footer-theme-decl a{
   color: green;
@@ -82,7 +83,7 @@ body {
   text-decoration: underline;
 }
 .post-list-container h3{
-  display: inline-block; /* Shrink the h3 to fit its content */
+  display: table; /* Shrink to fit content while remaining block-level */
   position: relative; /* Establishes a positioning context for the pseudo-element */
   padding-bottom: 4px; /* Adds some space for the underline */
   margin-top: 10px;
