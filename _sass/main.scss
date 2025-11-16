@@ -52,4 +52,19 @@ body {
   display:flex;
   justify-content: space-between;
   align-items: center;
+  padding-top: 0px;
 }
+.footer-theme-decl a{
+  color: green;
+}
+.footer-theme-decl a:hover {
+  text-decoration: underline;
+}
+.footer-message, 
+.footer-message a{
+  color: orangered;
+}
+.footer-message a:hover {
+  text-decoration: underline;
+}
+

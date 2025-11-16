@@ -1,4 +1,5 @@
+# Content customization
 title: Your Title
-sass:
-  sass_dir: _sass
-  style: compressed
+footer_message: Your Footer message
+# Optional Footer URL. Omit to not show a link
+footer_url: none
