@@ -9,10 +9,10 @@
     <div class="body-container">
       <nav class="navbar">
         <div class="navbar-div">
-          <div class="navbar-logo"><a href="/"> {{ site.title }} </a></div>
+          <div class="navbar-logo"> {{ site.title }} </div>
           <ul class="navbar-links">
             {% for item in site.data.navigation %}
-              <li><a href="{{ item.url }}">{{ item.title }}</a></li>
+              <li><a href="{{ item.url }}"> {{ item.title }} </a></li>
             {% endfor %}
           </ul>
         </div>

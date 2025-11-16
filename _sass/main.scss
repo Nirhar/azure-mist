@@ -1,6 +1,7 @@
 body {
   background-color: lightblue;
-  margin-left: 50px;
+  margin-left: 25px;
+  margin-right: 25px;
   text-align: center
 }
 .body-container{
@@ -17,29 +18,31 @@ body {
 }
 .navbar-div{
   display: flex;
-  padding-right: 15px;
+  padding-right: 0px;
   padding-left: 15px;
   align-items: center;
   justify-content: space-between;
-  padding-bottom: 15px;
+  padding-top: 0px;
+  padding-bottom: 5px;
+  margin-bottom: 0px;
   border-bottom: 2px solid black;
 }
 .navbar-logo{
   font-size: 40px;
   font-weight: bold;
-}
-.navbar-logo a{
+  margin-bottom: 0px;
   color: red;
 }
 .navbar-links{
   display: flex;
   list-style: none;
-  margin: 0;
-  padding: 0;
-  font-size: 25px;
+  margin: 0px;
+  padding: 10px;
+  font-size: 22px;
 }
 .navbar-links li{
-  margin-right: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
 }
 .navbar-links li a{
   color: rgb(240, 6, 197);
