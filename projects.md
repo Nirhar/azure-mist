@@ -2,6 +2,7 @@
 layout: post-list
 title: Projects
 permalink: /projects/
+underline_list_heads: true
 ---
 # Projects
 

@@ -1,6 +1,10 @@
 ---
 layout: default
 ---
-<div class="post-list-container" markdown="1">
-    {{content}}
+{% if page.underline_list_heads %}
+  <div class="post-list-container with-underline" markdown="1">
+{% else %}
+  <div class="post-list-container" markdown="1">
+{% endif %}
+  {{ content }}
 </div>
