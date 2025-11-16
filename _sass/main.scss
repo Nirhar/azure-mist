@@ -72,16 +72,16 @@ body {
 .footer-message a:hover{
   text-decoration: underline;
 }
-.post-container h3{
+.post-list-container h3{
   position: relative; /* Establishes a positioning context for the pseudo-element */
   padding-bottom: 4px; /* Adds some space for the underline */
   margin-top: 30px;
 }
-.post-container{
+.post-list-container{
   padding-left: 20px;
   padding-right: 20px;
 }
-.post-container h3::after{
+.post-list-container h3::after{
   content: '';
   position: absolute;
   bottom: 0;
@@ -90,13 +90,13 @@ body {
   height: 1px;
   background-color: blue;
 }
-.post-container h3 a{
+.post-list-container h3 a{
   color: blue;
 }
-.post-container h3 a:hover{
+.post-list-container h3 a:hover{
   text-decoration: underline;
 }
-.post-container p{
+.post-list-container p{
   padding-left: 20px;
   padding-right: 20px;
 }

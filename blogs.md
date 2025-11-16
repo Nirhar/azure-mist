@@ -1,7 +1,13 @@
 ---
-layout: default
+layout: post-list
 title: Blog Posts
 permalink: /blog/
 ---
-# Blogs
+# My Blog
+
+
+{% for post in site.posts %}
+### {{ forloop.index }}. [{{ post.title }}]({{ post.url }})
+{{ post.summary }}
+{% endfor %}
 
