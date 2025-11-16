@@ -12,7 +12,9 @@
           <div class="navbar-logo"> {{ site.title }} </div>
           <ul class="navbar-links">
             {% for item in site.data.navigation %}
-              <li><a href="{{ item.url }}"> {{ item.title }} </a></li>
+              <li {% if page.url == item.url %} class="current-page-nav-link" {% endif %}>
+                <a href="{{ item.url | relative_url }}"> {{ item.title }} </a>
+              </li>
             {% endfor %}
           </ul>
         </div>
