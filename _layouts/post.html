@@ -2,8 +2,9 @@
 layout: default
 ---
 <div class="post-container" markdown="1">
-    <h1> {{ page.title }} </h1>
-    <h2>{{ page.date | date_to_string }} - {{ page.author }}</h2>
+<h1> {{ page.title }} </h1>
+<i>{{ page.date | date_to_string }}</i>
+<hr class="post-horizontal-rule">
 
-    {{content}}
+{{content}}
 </div>
