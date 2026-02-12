@@ -7,7 +7,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["hmanishkausik@gmail.com"]
 
   spec.summary       = "A clean, nature-inspired Jekyll theme with a light blue aesthetic."
-  spec.homepage      = "https://github.com/ManishKausikH/azure-mist"
+  spec.homepage      = "https://github.com/Nirhar/azure-mist"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0").select { |f| f.match(%r!^(assets|_data|_layouts|_includes|_sass|LICENSE|README|_config\.yml)!i) }
