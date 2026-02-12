@@ -4,33 +4,27 @@ Welcome to **Azure Mist**! This is a clean, nature-inspired Jekyll theme with a 
 
 ## Installation
 
-Add this line to your Jekyll site's `Gemfile`:
+Add these lines to your Jekyll site's `Gemfile`:
 
 ```ruby
-gem "azure-mist"
+gem "jekyll-remote-theme", "~> 0.4.3"
+gem "openssl", "~> 4.0.0"
 ```
 
 And add this line to your Jekyll site's `_config.yml`:
 
 ```yaml
-theme: azure-mist
+remote_theme: Nirhar/azure-mist@main
+plugins:
+  - jekyll-remote-theme
 ```
 
 And then execute:
 
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install azure-mist
-
-## Usage
-
-TODO: Write usage instructions here. Describe your available layouts, includes, sass and/or assets.
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/nirhar/azure-mist. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](https://www.contributor-covenant.org/) code of conduct.
+    $ bundle install
+    $ bundle exec jekyll build
+    $ bundle exec jekyll serve
+    $ bundle exec jekyll clean # To clean the workspace
 
 ## Development
 
