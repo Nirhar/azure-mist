@@ -1,0 +1,57 @@
+name: Claude Issue Handler
+
+on:
+  issues:
+    types: [opened, labeled]
+
+jobs:
+  implement-feature:
+    # Only run when the issue has a 'claude' or 'feature' label,
+    # OR when any issue is first opened (remove the if-condition below to act on all new issues)
+    if: |
+      contains(github.event.issue.labels.*.name, 'claude') ||
+      contains(github.event.issue.labels.*.name, 'feature')
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      issues: write
+
+    steps:
+      - name: Checkout repository
+        # checkout is a github provided action that checks out the repository. 
+        # v4 here refers to version of the checkout action and not this repository.
+        uses: actions/checkout@v4 
+        with:
+          fetch-depth: 0
+
+      - name: Invoke Claude Code to implement feature
+        uses: anthropics/claude-code-action@beta
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          # Instruct Claude with context about the project and the issue
+          direct_prompt: |
+            You are working on the "azure-mist" Jekyll theme (GitHub repo: Nirhar/my-theme).
+
+            A new GitHub issue has been filed:
+
+            **Title:** ${{ github.event.issue.title }}
+
+            **Body:**
+            ${{ github.event.issue.body }}
+
+            **Issue URL:** ${{ github.event.issue.html_url }}
+            **Issue number:** #${{ github.event.issue.number }}
+
+            Your task:
+            1. Understand the feature or bug described in the issue.
+            2. Implement the requested change in the codebase (Jekyll theme files: _sass/, _layouts/, _includes/, assets/, _config.yml, etc.).
+            3. Keep changes minimal and focused — only touch what is needed.
+            4. Do NOT modify README.md or documentation unless the issue specifically asks for it.
+            5. After implementing, create a pull request targeting the `main` branch with:
+               - Title: "Fix/Feature: ${{ github.event.issue.title }}"
+               - Body that references and closes the issue using "Closes #${{ github.event.issue.number }}"
+
+            The Jekyll theme uses SCSS for styling, Liquid templating, and standard Jekyll conventions.
+            Make sure any SCSS changes follow the existing variable and nesting patterns in _sass/.
