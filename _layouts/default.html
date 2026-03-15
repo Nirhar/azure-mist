@@ -4,6 +4,12 @@
     <meta charset="utf8">
     <link rel="stylesheet" href="{{ "/assets/css/styles.css" | relative_url }}">
     <title>{{ page.title }}</title>
+    <script>
+      // Apply saved theme before paint to avoid flash
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+      }
+    </script>
   </head>
   <body>
     <div class="body-container">
@@ -11,6 +17,9 @@
         <div class="navbar-div">
           <div class="navbar-logo"> {{ site.title }} </div>
           <ul class="navbar-links">
+            <li>
+              <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">☽</button>
+            </li>
             {% for item in site.data.navigation %}
               <li {% if page.url == item.url %} class="current-page-nav-link" {% endif %}>
                 <a href="{{ item.url | relative_url }}"> {{ item.title }} </a>
@@ -19,6 +28,23 @@
           </ul>
         </div>
       </nav>
+      <script>
+        const toggle = document.getElementById('theme-toggle');
+        const root = document.documentElement;
+
+        function applyTheme(isDark) {
+          root.setAttribute('data-theme', isDark ? 'dark' : 'light');
+          toggle.textContent = isDark ? '☼' : '☽';
+          localStorage.setItem('theme', isDark ? 'dark' : 'light');
+        }
+
+        // Set correct icon on load
+        applyTheme(localStorage.getItem('theme') === 'dark');
+
+        toggle.addEventListener('click', () => {
+          applyTheme(root.getAttribute('data-theme') !== 'dark');
+        });
+      </script>
       <div class="content-container">
         {{content}}
       </div>
