@@ -183,6 +183,73 @@ body {
   text-align: justify;
   word-break: break-word;
 }
+/* Code blocks */
+.highlight {
+  border-radius: 6px;
+  margin: 1.2em 0.3em 1.2em 0.3em;
+  overflow-x: auto;
+  font-size: 14px;
+  line-height: 1.6;
+  border: 1px solid var(--color-border);
+
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 0;
+  }
+
+  td {
+    padding: 0;
+    vertical-align: top;
+  }
+
+  /* Line number gutter */
+  td.gutter {
+    user-select: none;
+    width: 1%;
+    min-width: 2.5em;
+    text-align: right;
+    border-right: 1px solid var(--color-border);
+    background: rgba(0, 0, 0, 0.05);
+  }
+
+  td.gutter pre.lineno {
+    margin: 0;
+    font-size: 13px;
+    color: var(--color-muted);
+  }
+
+  pre {
+    margin: 0;
+  }
+}
+
+.copy-btn {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  background: var(--color-glass);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  color: var(--color-muted);
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 11px;
+  padding: 2px 8px;
+  cursor: pointer;
+  opacity: 0;
+  transition: opacity 0.15s, color 0.15s;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+.highlight:hover .copy-btn {
+  opacity: 1;
+}
+
 .theme-toggle {
   background: none;
   border: 1px solid var(--color-border);
