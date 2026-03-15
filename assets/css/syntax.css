@@ -115,7 +115,6 @@
   font-weight: bold;
 }
 
-unknown theme: dracula
 [data-theme="dark"] .highlight table td { padding: 5px; }
 [data-theme="dark"] .highlight table pre { margin: 0; }
 [data-theme="dark"] .highlight, .highlight .w {
