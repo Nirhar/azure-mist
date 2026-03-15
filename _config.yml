@@ -1,3 +1,9 @@
+# Syntax highlighting
+# ---------------------------------------------------------------
+markdown: kramdown
+kramdown:
+  syntax_highlighter: rouge
+
 # Content customization
 # ---------------------------------------------------------------
 title: Azure Mist
