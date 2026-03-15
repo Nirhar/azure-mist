@@ -5,6 +5,8 @@
   --color-bg: #c9e4f5;
   --color-text: #1a1a1a;
   --color-border: black;
+  --color-mist: rgba(130, 213, 243, 0.87);
+  --color-glass: rgba(91, 213, 232, 0.25);
 }
 
 [data-theme="dark"] {
@@ -14,6 +16,46 @@
   --color-bg: #0f1e2b;
   --color-text: #e0eaf0;
   --color-border: #2e4a60;
+  --color-mist: rgba(124, 189, 226, 0.193);
+  --color-glass: rgba(4, 11, 18, 0.45);
+}
+
+@keyframes mist-drift-1 {
+  0%, 100% { transform: translateX(0) translateY(0);    opacity: 0.7; }
+  50%       { transform: translateX(40px) translateY(-20px); opacity: 1; }
+}
+
+@keyframes mist-drift-2 {
+  0%, 100% { transform: translateX(0) translateY(0);     opacity: 0.5; }
+  50%       { transform: translateX(-30px) translateY(15px); opacity: 0.8; }
+}
+
+body::before,
+body::after {
+  content: '';
+  position: fixed;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 0;
+  filter: blur(70px);
+}
+
+body::before {
+  width: 480px;
+  height: 320px;
+  background: radial-gradient(ellipse, var(--color-mist) 0%, transparent 70%);
+  top: 8%;
+  left: -6%;
+  animation: mist-drift-1 14s ease-in-out infinite;
+}
+
+body::after {
+  width: 520px;
+  height: 380px;
+  background: radial-gradient(ellipse, var(--color-mist) 0%, transparent 70%);
+  bottom: 10%;
+  right: -8%;
+  animation: mist-drift-2 18s ease-in-out infinite;
 }
 
 body {
@@ -30,6 +72,8 @@ body {
   border-radius: 10px;
   box-sizing: border-box;
   font-family:serif;
+  position: relative;
+  z-index: 1;
 }
 .content-container{
   padding-right: 20px;
@@ -54,6 +98,10 @@ body {
   padding-bottom: 5px;
   margin-bottom: 0px;
   border-bottom: 2px solid var(--color-border);
+  background: var(--color-glass);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 8px 8px 0 0;
 }
 .navbar-logo{
   font-size: 40px;
