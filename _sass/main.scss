@@ -1,5 +1,12 @@
+:root {
+  --color-primary: #1a6a9a;
+  --color-accent: #c0392b;
+  --color-muted: #4a7fa5;
+  --color-bg: #c9e4f5;
+}
+
 body {
-  background-color: rgb(140, 218, 244);
+  background-color: var(--color-bg);
   margin-left: 25px;
   margin-right: 25px;
 }
@@ -40,7 +47,7 @@ body {
   font-size: 40px;
   font-weight: bold;
   margin-bottom: 0px;
-  color: rgb(148, 15, 15);
+  color: var(--color-accent);
 }
 .navbar-links{
   display: flex;
@@ -54,11 +61,11 @@ body {
   margin-left: 10px;
 }
 .navbar-links li a{
-  color: rgb(200, 37, 121);
+  color: var(--color-primary);
   font-weight: bold;
 }
 .navbar-links li a:hover{
-  color: rgb(130, 12, 108);
+  color: var(--color-muted);
 }
 .navbar-links .current-page-nav-link a{
   text-decoration: underline;
@@ -72,14 +79,14 @@ body {
   margin-top: 50px;
 }
 .footer-theme-decl a{
-  color: green;
+  color: var(--color-muted);
 }
 .footer-theme-decl a:hover {
   text-decoration: underline;
 }
-.footer-message, 
+.footer-message,
 .footer-message a{
-  color: rgb(0, 98, 255);
+  color: var(--color-primary);
 }
 .footer-message a:hover{
   text-decoration: underline;
@@ -98,17 +105,17 @@ body {
   left: 0;
   width: calc(100% + 50px); /* Set width to content width + 25px */
   height: 1px;
-  background-color: blue;
+  background-color: var(--color-primary);
 }
 .post-list-container h3 a{
-  color: blue;
+  color: var(--color-primary);
 }
 .post-list-container h3 a:hover{
   text-decoration: underline;
 }
 .post-horizontal-rule {
   border: none;
-  background-color: blue;
+  background-color: var(--color-primary);
   height: 1px;
 }
 .post-list-container p{
