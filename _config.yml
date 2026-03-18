@@ -10,5 +10,6 @@ title: Azure Mist
 description: A clean, minimal Jekyll theme with a misty azure aesthetic.
 lang: en
 footer_message: Your footer message
+markdown: kramdown
 # Optional Footer URL. Omit to not show a link
 #footer_url: none
