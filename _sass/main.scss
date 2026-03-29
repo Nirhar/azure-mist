@@ -179,6 +179,17 @@ body {
 .post-list-container h3 a:hover{
   text-decoration: underline;
 }
+.post-meta {
+  display: flex;
+  justify-content: space-between;
+  color: var(--color-muted);
+}
+.post-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  color: var(--color-muted);
+}
 .post-horizontal-rule {
   border: none;
   background-color: var(--color-primary);
